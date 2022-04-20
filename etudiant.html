@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="etudiant.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            Name：<input v-model="name" placeholder="Name">
+            course：<input v-model="course" placeholder="course">
+            Course period：<input v-model="acceptancePeriod" placeholder="Course period">
+            <br><br><br>
+            <button v-on:click="addetudiant">Add the entered etudiant</button>
+            <br><br>
+            <h2> Student's list</h2>
+            <ul>
+            <li v-for="etudiant in etudiants" v-bind:key="etudiant.id">
+                    ID {{etudiant.id}} /
+                    Name {{etudiant.name}} /
+                    course {{etudiant.course}} /
+                    Course period {{etudiant.acceptancePeriod}}
+                </li>
+            </ul>
+        </div>
+        <script src="etudiant.js"></script>
+    </body>
+</html>
